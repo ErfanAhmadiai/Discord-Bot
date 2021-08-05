@@ -19,7 +19,7 @@ color = [0xC40B9C, 0x0B64C4, 0x11DC1F, 0xff4000, 0xbfff00, 0x00bfff, 0xff0000]
 
 
 @client.event
-async def on_ready():  # this part is OK
+async def on_ready():  
     servers = len(client.guilds)
     members = 0
     for guild in client.guilds:
@@ -175,7 +175,7 @@ async def Calendar(ctx, year: int, month: int):
 # Show server information
 @client.command(name='server',
                 help="Show server information")
-async def ServerInfo(ctx):  # This part is OK
+async def ServerInfo(ctx):  
     name = str(ctx.guild.name)
     description = str(ctx.guild.description)
 
@@ -347,7 +347,6 @@ async def leave(ctx):
 # Slaps a member
 @client.command(name="slap", help="Slaps a member")
 async def slap_member(Ctx, Target: discord.Member):
-    """Slaps a member."""
     await Ctx.send(f"**{Ctx.author.display_name}** just slapped {Target.mention} silly!")
     return
 
