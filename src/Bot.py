@@ -78,7 +78,7 @@ async def info(ctx):
     global color
     Embed_message = discord.Embed(
         title='central bot',
-        description="Crown Bot is kernel of this server",
+        description="This bot is kernel of this server",
         colour=random.choice(color)
     )
     Embed_message.set_image(url='https://i.pinimg.com/originals/cd/f0/9b/cdf09b00aea778cb509aafc4cccc4e77.png')
@@ -228,7 +228,7 @@ async def user_info(Ctx, Target: Optional[discord.Member]):
 # set your bot's status
 @client.command()
 @commands.has_permissions()
-async def status(ctx, status_type):  # This part is OK
+async def status(ctx, status_type):  
     if status_type == "idle":
         await client.change_presence(status=discord.Status.idle)
         await ctx.send("Status changed to idle")
@@ -243,7 +243,7 @@ async def status(ctx, status_type):  # This part is OK
 # set your bot's activity
 @client.command(help='Show Activity')
 @commands.has_permissions()
-async def activity(ctx, activity_type, *, activity_text):  # This part is OK
+async def activity(ctx, activity_type, *, activity_text):  
     if activity_type == "listening":
         await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening,
                                                                name=activity_text))
